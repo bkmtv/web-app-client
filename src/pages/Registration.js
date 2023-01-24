@@ -18,7 +18,7 @@ function Registration() {
       });
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/auth/register", data).then(() => {
+        axios.post("https://users-ibkmt.herokuapp.com/auth/register", data).then(() => {
           alert("Регистрация прошла успешно");
           navigate("/login");
         });

@@ -17,7 +17,7 @@ function App() {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:3001/auth", {
+    axios.get("https://users-ibkmt.herokuapp.com/auth", {
       headers: {
         accessToken: localStorage.getItem("accessToken"),
       },

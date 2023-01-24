@@ -11,7 +11,7 @@ function Login() {
     
     const login = () => {
         const data = { username: username, password: password };
-        axios.post("http://localhost:3001/auth/login", data).then((response) => {
+        axios.post("https://users-ibkmt.herokuapp.com/auth/login", data).then((response) => {
             if (response.data.error) {
               alert(response.data.error);
             } else {

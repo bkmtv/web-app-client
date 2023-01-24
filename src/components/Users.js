@@ -16,7 +16,7 @@ function Users() {
       });
   
       useEffect(() => {
-        axios.get("http://localhost:3001/auth", {
+        axios.get("https://users-ibkmt.herokuapp.com/auth", {
           headers: {
             accessToken: localStorage.getItem("accessToken"),
           },
@@ -38,18 +38,18 @@ function Users() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3001/users").then(response => {
+        axios.get("https://users-ibkmt.herokuapp.com/users").then(response => {
           setUsers(response.data);
         });
     }, [users]);
 
     const deleteUser = (id) => {
-      axios.delete(`http://localhost:3001/users/${id}`).then(() => {
+      axios.delete(`https://users-ibkmt.herokuapp.com/users/${id}`).then(() => {
         if (id === authState.id) logout();
       })};
 
     const blockUser = (id) => {
-      axios.put(`http://localhost:3001/users/${id}`).then(() => {
+      axios.put(`https://users-ibkmt.herokuapp.com/users/${id}`).then(() => {
         authState.authStatus = false;
         if (id === authState.id && !authState.authStatus) {
           logout();
@@ -58,7 +58,7 @@ function Users() {
       })};
 
     const unblockUser = (id) => {
-      axios.patch(`http://localhost:3001/users/${id}`).then(() => {
+      axios.patch(`https://users-ibkmt.herokuapp.com/users/${id}`).then(() => {
         console.log("unblocked")
       })};
 
@@ -76,7 +76,7 @@ function Users() {
 
       const deleteSelectedUsers = () => {
         for (let i = 0; i < selectedUser.length; i++) {
-          axios.delete(`http://localhost:3001/users/${selectedUser[i]}`).then(() => {
+          axios.delete(`https://users-ibkmt.herokuapp.com/users/${selectedUser[i]}`).then(() => {
             if (authState.id === selectedUser[i]) logout();
         })
       }
@@ -84,7 +84,7 @@ function Users() {
 
     const blockSelectedUsers = () => {
       for (let i = 0; i < selectedUser.length; i++) {
-        axios.put(`http://localhost:3001/users/${selectedUser[i]}`).then(() => {
+        axios.put(`https://users-ibkmt.herokuapp.com/users/${selectedUser[i]}`).then(() => {
           authState.authStatus = false;
           if (authState.id === selectedUser[i] && !authState.authStatus) logout();
       })
@@ -93,7 +93,7 @@ function Users() {
 
   const unblockSelectedUsers = () => {
     for (let i = 0; i < selectedUser.length; i++) {
-      axios.patch(`http://localhost:3001/users/${selectedUser[i]}`).then(() => {
+      axios.patch(`https://users-ibkmt.herokuapp.com/users/${selectedUser[i]}`).then(() => {
         console.log("unblocked");
     })
   }
