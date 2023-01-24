@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+.form {
+  max-width: 300px;
+}
+
+.status {
+  width: 150px;
+}
+
+.toolbar {
+  margin: 35px 0 10px 0;
+  width: 150px;
+}
+
+.toolbar button {
+  position: relative;
+  display: inline-block;
+  border: none;
+  background: none;
+  margin: 5px;
+  font-size: 1.5rem;
+}
+
+.actions {
+  width: 130px;
+}
+
+.actions button {
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  font-size: 0.8rem;
+  color: white;
+  background-color: #212f3ade;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.toolbar button:hover .tooltip-text {
+  visibility: visible;
+}
+
+#top {
+  bottom: 40px;
+}
