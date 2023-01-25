@@ -81,7 +81,7 @@ function App() {
     const blockSelectedUsers = () => {
       for (let i = 0; i < selectedUser.length; i++) {
         axios.put(`https://users-ibkmt.herokuapp.com/users/${selectedUser[i]}`).then((response) => {
-          if (authState.id === selectedUser[i]) {
+          if (authState.id === selectedUser[i] && !authState.authStatus) {
             logout();
           }
           setUsers(response.data);
